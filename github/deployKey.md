@@ -1,0 +1,1 @@
+- Deploy-key サブモジュールされる方にpub, する側にsecret(secretsに設定)
