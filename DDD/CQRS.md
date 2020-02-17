@@ -1,0 +1,3 @@
+- https://little-hands.hatenablog.com/entry/2019/12/02/cqrs
+- command(登録系), query(参照系)
+- コマンドのentityはデータ + ロジック、クエリはdtoデータ(入出力のロジック)って分けるイメージ
