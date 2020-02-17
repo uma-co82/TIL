@@ -1,0 +1,6 @@
+- https://blog.j5ik2o.me/entry/20101228/1293551861
+- https://blog.j5ik2o.me/entry/20101229/1293642673
+- https://blog.j5ik2o.me/entry/20101229/1293584046#seeall
+- https://blog.j5ik2o.me/entry/20101229/1293648247
+- ボトムアップDDD https://nrslib.com/bottomup-ddd/
+- interface実装クラスをfactoryクラスで生成
