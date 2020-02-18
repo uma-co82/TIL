@@ -9,3 +9,7 @@ SELECT *, (SELECT COUNT(post_id) FROM post_hashtag WHERE hashtag_id = id) AS ran
 ```sql
 Select("*, (6371 * acos(cos(radians((SELECT lat FROM tourist_spot WHERE id = ?)))* cos(radians(lat))* cos(radians(lng) - radians((SELECT lng FROM tourist_spot WHERE id = ?)))+ sin(radians((SELECT lat FROM tourist_spot WHERE id = ?)))* sin(radians(lat)))) AS distance", query.ID, query.ID, query.ID).Having("distance <= ?", 5).Order("distance")
 ```
+
+## 全文インデックス
+
+https://dev.mysql.com/doc/refman/5.6/ja/innodb-fulltext-index.html
