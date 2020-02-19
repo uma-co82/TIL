@@ -13,3 +13,11 @@ Select("*, (6371 * acos(cos(radians((SELECT lat FROM tourist_spot WHERE id = ?))
 ## 全文インデックス
 
 https://dev.mysql.com/doc/refman/5.6/ja/innodb-fulltext-index.html
+
+```sql
+ FULLTEXT KEY(name) WITH PARSER NGRAM
+```
+
+```sql
+WHERE (MATCH(name) AGAINST('keyward'))
+```
