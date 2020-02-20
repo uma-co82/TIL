@@ -21,3 +21,8 @@ https://dev.mysql.com/doc/refman/5.6/ja/innodb-fulltext-index.html
 ```sql
 WHERE (MATCH(name) AGAINST('keyward'))
 ```
+
+## sqlクエリ頑張りすぎるのどうなん？
+```
+あんまsqlに任せすぎると業務ロジックがそっちに行くしでちょっと微妙なところだよね。
+```
