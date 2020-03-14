@@ -1,9 +1,10 @@
 ## Column
 
-配列作成
+## marshal, unmarshalの継承
 
 ```go
-slice := make([]int, len(7))
+func (レシーバー) MarshalJSON() ([]byte, error) {}
+func (レシーバー) UnmarshalJSON(data []byte) error {}
 ```
 
 - cobra コマンドラインツール生成
