@@ -1,0 +1,2 @@
+## security group
+- セキュリティグループのinboudにセキュリティグループ入れるやつはprivateIPで通信している時しか機能しない
