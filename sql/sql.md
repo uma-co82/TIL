@@ -28,6 +28,7 @@ WHERE (MATCH(name) AGAINST('keyward'))
 ```
 
 ## 中間テーブルのupdated_at順
+
 ```sql
 SELECT * FROM post INNER JOIN (SELECT post_id, updated_at FROM user_favorite_post WHERE user_id = 1) hoge ON post.id = hoge.post_id ORDER BY hoge.`updated_at` DESC;
 ```
