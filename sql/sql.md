@@ -32,3 +32,15 @@ WHERE (MATCH(name) AGAINST('keyward'))
 ```sql
 SELECT * FROM post INNER JOIN (SELECT post_id, updated_at FROM user_favorite_post WHERE user_id = 1) hoge ON post.id = hoge.post_id ORDER BY hoge.`updated_at` DESC;
 ```
+
+
+```sql
+SELECT f.*, u.*
+FROM user_favorite_post f
+JOIN user u
+ON f.user_id = u.id AND u.deleted_at IS NULL
+LEFT JOIN user_following uf
+ON u.id = uf.target_id and uf.user_id=1
+WHERE f.`post_id`=1
+ORDER BY uf.created_at DESC, f.created_at DESC;
+```
