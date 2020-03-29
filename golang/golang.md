@@ -13,3 +13,8 @@ func (レシーバー) UnmarshalJSON(data []byte) error {}
 - wire (DI実現)
 - internalはpkgからは読めない
 - marshal, unmarshal継承
+
+## logパッケージのFatalについて
+- Fatalを使うのはメイン関数だけに絞るほうが良い
+- deferが実行されなかったりする
+- ァイルのクローズとかは問題ないですが、deferでredisのロックの解除とかやってるとハマります
