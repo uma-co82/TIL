@@ -17,3 +17,8 @@ aws --endpoint-url=http://localhost:4572 s3 cp hoge s3://hoge/tmp/
 ```sh
 
 ```
+
+## s3 show
+```sh
+aws --endpoint-url=http://localhost:4572 s3 ls test-bucket
+```
