@@ -15,7 +15,7 @@ aws --endpoint-url=http://localhost:4572 s3 cp hoge s3://hoge/tmp/
 ## s3 download
 
 ```sh
-
+aws --endpoint-url=http://172.17.0.2:4572 s3 cp s3://my-bucket-async/my-object b.txt
 ```
 
 ## s3 show
