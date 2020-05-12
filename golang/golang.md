@@ -21,3 +21,4 @@ func (レシーバー) UnmarshalJSON(data []byte) error {}
 
 ## 豆
 - echo $? でプログラムが正常に終わったか調べれる
+- 文字列の連続を調べる時はprefixでも良さげ
