@@ -1,0 +1,67 @@
+{
+  "executionRoleArn": "arn:aws:iam::031362952436:role/ecsTaskExecutionRoleForMediaAPI",
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/sw-stg-media-web",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "entryPoint": null,
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "image": "TBD",
+      "essential": true,
+      "name": "sw-stg-media-web"
+    },
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/sw-stg-media-app",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "entryPoint": null,
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": 5000
+        }
+      ],
+      "image": "TBD",
+      "essential": true,
+      "name": "sw-stg-media-app",
+      "secrets" : [
+        {
+          "name": "MEDIA_API_URL",
+          "valueFrom": "sw-stg-media-app-config-media"
+        },
+        {
+          "name": "INN_SEARCH_API_URL",
+          "valueFrom": "sw-stg-media-app-config-innsearch"
+        },
+        {
+          "name": "FILE_URL",
+          "valueFrom": "sw-stg-media-app-config-file"
+        }
+      ]
+    }
+  ],
+  "taskRoleArn": "arn:aws:iam::031362952436:role/ecsTaskExecutionRoleForMediaAPI",
+  "family": "sw-stg-media-front",
+  "requiresCompatibilities": [ "FARGATE" ],
+  "networkMode": "awsvpc",
+  "cpu": "1024",
+  "memory": "2048"
+}
