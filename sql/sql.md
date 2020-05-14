@@ -44,3 +44,9 @@ ON u.id = uf.target_id and uf.user_id=1
 WHERE f.`post_id`=1
 ORDER BY uf.created_at DESC, f.created_at DESC;
 ```
+
+## followしてるかどうか
+
+```sql
+LEFT JOIN user_following ON user.id = user_following.target_id AND user_following.user_id = ?
+```
