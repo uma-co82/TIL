@@ -1,18 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"regexp"
+)
 
 func main() {
-	hoge := []string{"1", "2", "3"}
-	var sum int
-	if len(hoge) < sum {
-		goto END_LABEL
-	}
-	for i := 0; i <= 2; i++ {
-		fmt.Println(hoge[i])
-	}
-END_LABEL:
-	fmt.Println("end")
+	foo := "/singapore-restaurant25/3シンガポールでグルメを楽しもう！おすすめレストラン25選 | Part 3 | Stayway Media ページ 4"
+	re := regexp.MustCompile(`(Page|ページ|Part) (\d)`)
+	fmt.Println(re.FindAllStringSubmatch(foo, -1))
 }
 
 // func main() {
