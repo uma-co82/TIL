@@ -50,3 +50,9 @@ ORDER BY uf.created_at DESC, f.created_at DESC;
 ```sql
 LEFT JOIN user_following ON user.id = user_following.target_id AND user_following.user_id = ?
 ```
+
+## 支援金額
+
+```sql
+SELECT * FROM cf_project JOIN (SELECT b.cf_project_id, SUM(a.price * b.amount) AS amount_achieved FROM cf_return_gift_snapshot a LEFT JOIN payment_cf_return_gift b ON a.id = b.cf_return_gift_snapshot_id GROUP BY b.cf_project_id) t1 ON cf_project.id = t1.cf_project_id;
+```
