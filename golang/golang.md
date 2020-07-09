@@ -22,3 +22,6 @@ func (レシーバー) UnmarshalJSON(data []byte) error {}
 ## 豆
 - echo $? でプログラムが正常に終わったか調べれる
 - 文字列の連続を調べる時はprefixでも良さげ
+
+## sqlで取りづらい時
+- map[int]entityでid:entityのmapを作ることを考えてみる
