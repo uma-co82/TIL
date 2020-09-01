@@ -25,3 +25,7 @@ func (レシーバー) UnmarshalJSON(data []byte) error {}
 
 ## sqlで取りづらい時
 - map[int]entityでid:entityのmapを作ることを考えてみる
+
+## 適当な連番
+
+- https://golang.org/pkg/crypto/rand/#Read
