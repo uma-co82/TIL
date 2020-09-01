@@ -1,0 +1,11 @@
+## cloudfrontのみからアクセス許可する
+1. orgin edit
+2. 『restrict bucket access』 => yes
+3. origin access identity => create a new identity
+4. s3のバケットポリシーが更新されているか確認
+
+## s3にリダイレクトされる
+1. 時間の問題
+2. orgin domain nameにreasonのsuffix付けたらすぐ直る
+
+## sslにならない
