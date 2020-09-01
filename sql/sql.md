@@ -61,3 +61,9 @@ SELECT * FROM cf_project JOIN (SELECT b.cf_project_id, SUM(a.price * b.amount) A
 Joins("(SELECT cf_project_id, MAX(id) AS id FROM post GROUP BY cf_project_id) p ON cf_project.id = p.cf_project_id").
 		Where("IFNULL(cf_project.latest_post_id, 0) < p.id AND cf_project.id > ?", lastID).
 ```
+
+## 支援したproject
+
+```sql
+SELECT * FROM cf_project INNER JOIN (SELECT cf_project_id, MAX(created_at) AS created_at FROM payment_cf_return_gift WHERE payment_id IN (SELECT id FROM payment WHERE user_id = 483) GROUP BY cf_project_id) pc ON cf_project.id = pc.cf_project_id ORDER BY pc.created_at DESC;
+```
