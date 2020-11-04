@@ -38,3 +38,28 @@ type Date time.Time
 date := &Date{}
 time := (*time.Time)(date)
 ```
+
+## interface型アサーション
+
+```go
+type Date interface {
+  Now() error
+}
+
+type Date1 struct {
+}
+
+type Date2 struct {
+}
+
+func (d *Date1) Now() error {
+  return nil
+}
+
+func (d *Date2) Now() error {
+  return nil
+}
+
+
+
+```
