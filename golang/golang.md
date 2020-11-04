@@ -29,3 +29,12 @@ func (レシーバー) UnmarshalJSON(data []byte) error {}
 ## 適当な連番
 
 - https://golang.org/pkg/crypto/rand/#Read
+
+## いかつい型アサーション
+
+```go
+type Date time.Time
+
+date := &Date{}
+time := (*time.Time)(date)
+```
