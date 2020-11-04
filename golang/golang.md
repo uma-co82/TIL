@@ -60,6 +60,8 @@ func (d *Date2) Now() error {
   return nil
 }
 
+var date Date
 
-
+date1 := date.(Date1)
+date2 := date.(Date2)
 ```
