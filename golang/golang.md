@@ -30,7 +30,7 @@ func (レシーバー) UnmarshalJSON(data []byte) error {}
 
 - https://golang.org/pkg/crypto/rand/#Read
 
-## いかつい型アサーション
+## いかつい型アサーション?
 
 ```go
 type Date time.Time
