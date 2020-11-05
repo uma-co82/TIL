@@ -38,6 +38,13 @@ type Date time.Time
 date := &Date{}
 time := (*time.Time)(date)
 ```
+型キャストですね。ポインタじゃなかったら、  
+time.Time(charge.Birthdate)  
+と書けるところを  
+*time.Time(charge.Birthdate)  
+と書くと  
+*(time.Time(charge.Birthdate))  
+と解釈されてしまうので、カッコを付けて*も型の一部であることを表記してるんだと思います。
 
 ## interface型アサーション
 
